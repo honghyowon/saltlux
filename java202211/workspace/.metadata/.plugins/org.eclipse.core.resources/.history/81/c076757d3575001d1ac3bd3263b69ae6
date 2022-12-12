@@ -1,0 +1,35 @@
+package com.test5;
+
+public class Sales extends Employee implements Bonus {
+	
+	public Sales() {
+	
+	}
+	
+	public Sales(String name, int number, String department, int salary) {
+		super();
+	}
+	
+	
+	
+	
+
+
+	
+
+	@Override
+	public void incentive(int pay) {
+
+		
+	}
+
+
+	@Override
+	public double tax() {
+		return 0;
+	}
+	
+	
+	
+
+}//

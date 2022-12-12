@@ -1,0 +1,47 @@
+package com.computer;
+
+public class Tab extends Computer implements Graphic{
+
+	public Tab() {
+
+	}
+	
+	
+	
+	
+	public Tab(String name, int cpu, int memory, int bettery) {
+		super();
+		this.name = name;
+		this.cpu = cpu;
+		this.memory = memory;
+		this.bettery = bettery;
+	}
+
+
+
+
+	public String name;
+	public int cpu;
+	public int memory;
+	public int bettery;
+	
+	
+	@Override
+	public double rendering(int size) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void operate(int time) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+	
+	
+}//
+
+

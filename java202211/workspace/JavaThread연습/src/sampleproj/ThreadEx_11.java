@@ -1,0 +1,78 @@
+package sampleproj;
+
+// 이 thread의 instance를 생성해서 실행하면
+// 10초마다 일정량의 메모리사용량을 감소시킴
+class ThreadEx_11_1 extends Thread{
+
+	final static int MAX_MEMORY = 1000;
+	int usedMemory = 0;
+	
+	@Override
+	public void run() {
+		while(true) {					// 무한루프
+			try {
+				Thread.sleep(10000);	//try~catch문 씌워주기
+			} catch (InterruptedException e) {
+
+			}
+			gc();						//	10초간 잤다 깨면서 메모리 청소 좀 해라 ~
+			System.out.println("남은 메모리량 : " + freeMemory());
+		}
+	}
+
+	public void gc() {
+		usedMemory -= 300;				// usedMemory = usedMemory - 300;
+		if(usedMemory < 0) {
+			usedMemory = 0; 			//메모리값이 마이너스인 경우는 없으니까 0
+			
+		}
+	}
+	public int totalMemory() {
+		return MAX_MEMORY;
+	}
+	
+	public int freeMemory() {			// 가용 메모리
+		return MAX_MEMORY - usedMemory;	
+	}
+}
+
+
+public class ThreadEx_11 {
+	
+	public static void main(String[] args) {
+		
+		ThreadEx_11_1 t = new ThreadEx_11_1();
+		t.setDaemon(true);
+		t.start();						// start 하면 run이 실행됨
+		
+		int requiredMemory = 0;
+		
+		for(int i=0; i<20; i++) {
+			requiredMemory = ((int)(Math.random()*10)) * 20;
+							// Math.random 0<= 난수 < 1 사이의 난수값을 도출
+							// 0 ~ 10 인데, 정수화 시켜서 소수점이 날라가서 0 ~ 9까지의 난수값
+							// 0 ~180 , 0, 20, 40, 60, ... 180
+			
+			// 위에서 구한 필요한 메모리량이 사용할 수 있는 메모리 량보다 크거나
+			// 혹은 전체 메모리의 60% 이상을 사용했을 때 GC를 깨울 거에요
+			if((t.freeMemory() < requiredMemory) || 
+					t.freeMemory() < t.totalMemory() * 0.4) {
+				t.interrupt();	// 자고 있던 memory를 깨움
+				
+				try {
+					t.join(100);	// 0.1초동안 sleep에서 깨어나서 메모리를 청소함.
+									//인자없이 사용하면 무한루프에 빠지기 때문에 숫자를 넣어줌
+				} catch (InterruptedException e) {
+
+					e.printStackTrace();
+				}
+			}
+			
+			t.usedMemory += requiredMemory;	// 사용된 메모리량을 누적시킴
+			System.out.println("남은 메모리량 : " + t.freeMemory());			
+		}
+		
+		
+		
+	}
+}

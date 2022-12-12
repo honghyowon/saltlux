@@ -1,0 +1,76 @@
+package com.Test4;
+
+public class Rectangle extends Shape implements Movable{
+	
+	//생성자
+	public Rectangle() {
+	
+	}
+	
+	public Rectangle(int width, int x, int y) {
+		super(new Point(x,y));
+		this.width = width;
+	}
+
+
+	//field
+	private int width;
+
+
+	@Override
+	public void move(int x, int y) {
+		// x와 y의 좌표값을 변경
+		Point p = getPoint();
+		p.setX(p.getX() + x + 2);
+		p.setY(p.getY() + y + 2);
+		setPoint(p);
+		
+	}
+
+
+
+	@Override
+	public double getArea() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+	@Override
+	public double getCircumference() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	//getter & setter
+	public int getWidth() {
+		return width;
+	}
+
+
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+
+	@Override
+	public String toString() {
+		return this.getClass().getSimpleName() + "  "		//클래스이름을 알아낼 수 있음
+				+ width + "  "
+				+ getPoint().getX() + "  "
+				+ getPoint().getY() + "  "
+				+ getArea() + "  "
+				+ getCircumference();
+					
+		
+	}
+
+	
+	
+
+	
+	
+}//

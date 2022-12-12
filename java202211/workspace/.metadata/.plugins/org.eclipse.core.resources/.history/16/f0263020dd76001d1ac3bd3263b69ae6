@@ -1,0 +1,49 @@
+package sampleproj;
+
+import javax.swing.JOptionPane;
+
+class ThreadEx_06_1_part1 extends Thread {
+	
+	@Override
+	public void run() {
+		
+		int i = 10;									// 지역변수
+		
+		while(i != 0 && !this.isInterrupted()) {			// this.isInterrupted에서 this. 생략
+			System.out.println(i--);				// 10출력 후 i값을 1감소
+			
+			try {
+				Thread.sleep(2000);			
+			} catch(InterruptedException e){
+//				interrupt();
+				System.out.println("앗, 자는 중에 interrupt가 걸렸어요");
+			}
+		}
+		System.out.println("카운트가 종료되었습니다.");
+			
+		}
+	}
+
+
+
+public class ThreadEx_06_part1 {
+
+	public static void main(String[] args) {
+		Thread t = new ThreadEx_06_1();				// thread instance 생성
+	
+		t.start();								// thread를 Runnable상태로 전이시킴
+												// 바로 실행은 안 되지만
+												// 언젠가는 Thread Scheduler에 의해 실행됨
+		String data = JOptionPane.showInputDialog("값을 입력하세요.");
+		System.out.println(data);
+		
+		t.interrupt();							// thread를 interrupt 시켰음
+												// thread가 중지/일지정지 등은 발생하지 않음
+												// 로직으로 thread의 행동을 제어해야 함
+												// 만약 interrupt를 걸었는데 이때 해당 Thread가 
+												// sleep상태면,,
+		
+}
+
+}//
+

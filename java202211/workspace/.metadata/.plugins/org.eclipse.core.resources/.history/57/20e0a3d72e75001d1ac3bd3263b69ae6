@@ -1,0 +1,31 @@
+package com.tests;
+
+public class Sales extends Employee implements Bonus {
+	
+	public Sales() {
+	
+	}
+	
+	
+	
+	
+	
+
+	@Override
+	public double tax() {
+	
+		return super.tax();
+	}
+	
+	
+
+	@Override
+	public void incentive(int pay) {
+
+		
+	}
+	
+	
+	
+
+}//

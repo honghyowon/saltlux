@@ -1,0 +1,42 @@
+package com.Test4;
+
+public class Circle extends Shape implements Movable{
+
+	public Circle() {
+	
+	}
+	
+	
+	private int radius;
+
+
+	public int getRadius() {
+		return radius;
+	}
+
+
+	public void setRadius(int radius) {
+		this.radius = radius;
+	}
+	
+	
+	public double getArea() {
+
+		return super.getArea();
+	}
+	
+	@Override
+	public double getCircumferenc() {
+
+		return super.getCircumferenc();
+	}
+	
+	
+	
+	private void move(int x, int y) {
+
+
+	}
+	
+	
+}//

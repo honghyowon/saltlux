@@ -1,0 +1,25 @@
+package sampleproj;
+
+class ThreadEx_10_1 extends Thread {
+	@Override
+	public void run() {
+
+	}
+}
+
+class ThreadEx_10_2 extends Thread {
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		super.run();
+	}
+}
+
+public class ThreadEx_10 {
+
+	public static void main(String[] args) {
+		
+	}
+	
+}

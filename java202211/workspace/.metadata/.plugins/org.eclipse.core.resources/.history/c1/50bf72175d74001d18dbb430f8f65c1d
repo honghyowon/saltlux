@@ -1,0 +1,27 @@
+package com.computer;
+
+public class Laptop extends Computer {
+
+	public Laptop() {
+		
+	}
+
+
+	public Laptop(String name, int cpu, int memory, int battery) {
+		super(name, cpu, memory, battery);
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
+	@Override
+	public void operate(int time) {
+		
+	}
+	
+	
+	
+	
+	
+}//

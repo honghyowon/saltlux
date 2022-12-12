@@ -1,0 +1,66 @@
+package sampleproj;
+
+class ThreadEx_01 extends Thread {
+	
+	public ThreadEx_01 () {
+		
+	}
+	
+	
+	
+	// 새로운 독립적인 실행 흐름
+	// 프로그램의 entry point에 준하는 무언가 시작 method가 있다는 의미
+	@Override
+	public void run() {
+		// 내가 실행하고 싶은 코드를 작성 !
+		
+		// for문 같은 경우
+		// 1. 집합자료구조를 이용하는 경우 => for~each구문
+		// for(Stirng s : list) { }
+		// 2. 원하는 횟수만큼 반복할 경우 => 일반 for문
+		for(int i=0; i<5; i++) {
+			System.out.println(this.getName());
+		}//for()
+		
+	}	// 프로그램의 entry point
+}
+
+// 예전 설명
+// java TreadEx_01 => 실행하면..
+// JVM이 main method를 호출해서 프로그램을 시작함
+
+// Thread관점에서 다시 설명
+// java Thread_01 => 실행하면..
+// JVM이 내부적으로 Thread를 하나 생성
+// 이 Thread가 main method를 호출해서 실행
+// 이 Thread를 main thread라고 부름
+
+// process(프로그램)는 main method가 시작되면 시작하는 거고
+// main method가 종료되는 전체 프로그램이 종료됨 => 틀림 !
+
+// 정확하게는 process안에 있는 모든 Thread가 종료되어야지
+// process가 종료됨
+public class ThreadEx_01 {
+	
+	public static void main(String[] args) {
+		// 이 main method는 당연히 하나의 Thread에 의해서 실행되는 method
+//		int result = 10 / 0;
+		
+		ThreadEx_01_1 t1= enw ThreadEx_01_1();
+		// t1은 Thread instance가 됨
+		// t1은 현재 객체일 뿐, 아직 동작하지 않고 있음
+		// 이 thread는 독립적인 실행 흐름을 가지고 있음
+		// run()안에 그 내용을 기술하고 있음
+		// 이제 이 thread를 실행시킬거에요
+		t1.run();
+		// 이렇게 호출하면.. 단순히 객체의 method를 호출하는 거지
+		// Thread를 실행시킨 건 아님
+		// 아하, 이렇게 하는게 아니라 다른 method를 이용해야 함
+		t1.start();	//run을 찾아가서 호출
+		// start()를 이용해서 Thread를 실행시킴
+		System.out.println("main thread 종료");
+		
+		
+	}
+	
+}

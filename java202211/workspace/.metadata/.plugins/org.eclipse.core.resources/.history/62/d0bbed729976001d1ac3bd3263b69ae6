@@ -1,0 +1,26 @@
+package sampleproj;
+
+
+
+class ThreadEx_06_1 extends Thread {
+	
+	@Override
+	public void run() {
+		
+		int i = 10;						// 지역변수
+		
+		while(i != 0) {
+			System.out.println(i--);	// 10출력 후 i값을 1감소	
+		}
+		System.out.println("카운트가 종료되었습니다.");
+		
+	}
+}
+
+public class ThreadEx_06 {
+
+	public static void main(String[] args) {
+		
+	}
+	
+}//

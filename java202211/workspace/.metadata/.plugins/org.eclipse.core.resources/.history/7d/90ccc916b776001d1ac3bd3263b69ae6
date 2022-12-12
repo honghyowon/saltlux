@@ -1,0 +1,27 @@
+package sampleproj;
+
+class ThreadEx_08_1 implements Runnable{
+
+	boolean suspended = false;
+	boolean stopped = false;
+	
+	@Override
+	public void run() {
+		
+		while(!stopped) {
+			if(!suspended) {
+				System.out.println(Thread.currentThread().getName());
+			}
+		}
+		
+	}
+	
+}
+
+public class ThreadEx_08 {
+
+	public static void main(String[] args) {
+		
+	}
+	
+}

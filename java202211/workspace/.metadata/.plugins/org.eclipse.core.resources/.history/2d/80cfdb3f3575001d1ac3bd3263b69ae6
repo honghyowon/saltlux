@@ -1,0 +1,29 @@
+package com.test5;
+
+public class Secretary extends Employee implements Bonus{
+
+	
+	public Secretary() {
+	
+	}
+	
+	public Secretary(String name, int number, String department, int salary) {
+		super();
+	}
+	
+	
+
+	@Override
+	public void incentive(int pay) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public double tax() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}//

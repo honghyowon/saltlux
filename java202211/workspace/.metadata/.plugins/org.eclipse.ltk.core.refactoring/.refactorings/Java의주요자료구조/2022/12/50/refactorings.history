@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.tests&apos; to &apos;com.test5&apos;&#x0A;- Original project: &apos;Java의주요자료구조&apos;&#x0A;- Original element: &apos;Java의주요자료구조/src/com.tests&apos;&#x0A;- Renamed element: &apos;Java의주요자료구조/src/com.test5&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.tests&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.tests" name="com.test5" qualified="false" references="true" stamp="1670307956544" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,33 @@
+package sampleproj;
+
+public class ThreadEx_04 implements Runnable{
+	
+	//field
+	static boolean autoSave = false;
+	
+	public static void main(String[] args) {
+		
+		Thread t = new Thread(new ThreadEx_04());
+		t.setDaemon(true);		//자신을 만든 thread(Main)의 보조 thread가 됨
+		
+		t.start();
+	}
+
+	@Override
+	public void run() {
+		
+		while(true) {
+			// Thread를 일정시간동안 재울 거에요
+			try {
+				Thread.sleep(3000);				//밀리세컨즈 단위 => 3초, class 이름으로 sleep method 바로 호출 => static
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}		
+			
+			
+		}//while() end
+		
+	}
+	
+}//

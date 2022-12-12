@@ -1,0 +1,67 @@
+package sampleproj;
+
+class ThreadEx_08_1 implements Runnable{
+	
+	//자체적으로 필드를 가짐
+	boolean suspended = false;
+	boolean stopped = false;	
+	
+	@Override
+	public void run() {
+		
+		while(!stopped) {
+			if(!suspended) {
+				System.out.println(Thread.currentThread().getName());
+				
+				try {
+					Thread.sleep(1000);
+				} catch (Exception e) {
+
+				}
+			}
+		}
+		
+	}
+	
+	public void suspend() { suspended = true; }
+	public void resume() { suspended = false; }
+	public void stop() { stopped = true; }
+}
+
+public class ThreadEx_08 {
+
+	public static void main(String[] args) {
+		
+		// Runnable 객체를 공유하면 안됨 !
+		ThreadEx_08_1 r1 = new ThreadEx_08_1();
+		ThreadEx_08_1 r2 = new ThreadEx_08_1();
+		ThreadEx_08_1 r3 = new ThreadEx_08_1();
+		
+		Thread t1 = new Thread(r1, "*");
+		Thread t2 = new Thread(r1, "**");
+		Thread t3 = new Thread(r1, "***");
+		
+		t1.start();
+		t2.start();
+		t3.start();
+		
+		
+		try {
+			Thread.sleep(2000);		// main thread sleep
+			// 첫번째 thread를 일시정지할 거에요
+			r1.suspend();
+		} catch (Exception e) {
+
+		}
+		
+		
+		
+		
+	}
+	
+}
+
+
+
+
+

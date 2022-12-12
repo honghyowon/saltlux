@@ -1,0 +1,38 @@
+package com.Test4;
+
+import java.awt.Point;
+
+public abstract class Shape {
+
+	public Shape() {
+	
+	}
+	
+	
+	
+	public Shape(Point point) {
+		super();
+		this.point = point;
+	}
+
+
+
+	protected Point point;
+
+
+	public double getArea() {
+		return 도형 넓이;
+
+	}
+	
+	public double getCircumferenc() {
+		return 도형 둘레;
+
+	}
+	
+	
+	
+	
+	
+	
+}//

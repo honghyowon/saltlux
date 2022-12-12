@@ -1,0 +1,44 @@
+package sampleproj;
+
+// 이 thread의 instance를 생성해서 실행하면
+// 10초마다 일정량의 메모리사용량을 감소시킴
+class ThreadEx_11_1 extends Thread{
+
+	final static int MAX_MEMORY = 1000;
+	int usedMemory = 0;
+	
+	@Override
+	public void run() {
+		while(true) {					// 무한루프
+			try {
+				Thread.sleep(10000);	//try~catch문 씌워주기
+			} catch (InterruptedException e) {
+
+			}
+			gc();
+		}
+	}
+
+	public void gc() {
+		usedMemory -= 300;				// usedMemory = usedMemory - 300;
+		if(usedMemory < 0) {
+			usedMemory = 0; 			//메모리값이 마이너스인 경우는 없으니까 0
+			
+		}
+	}
+	public int totalMemory() {
+		return MAX_MEMORY;
+	}
+	
+	public int freeMemory() {			// 가용 메모리
+		return MAX_MEMORY - usedMemory;	
+	}
+}
+
+
+public class ThreadEx_11 {
+	
+	public static void main(String[] args) {
+		
+	}
+}

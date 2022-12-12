@@ -1,0 +1,40 @@
+package com.Test4;
+
+public class Circle extends Shape implements Movable{
+
+	//생성자
+	public Circle() {
+	
+	}
+	
+	public Circle(int radius, int x, int y) {
+		super(new Point(x,y));
+		this.radius = radius;
+	}
+	
+	//field
+	private int radius;
+
+	@Override
+	public void move(int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public double getArea() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getCircumferenc() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+	
+	
+}//

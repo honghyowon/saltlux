@@ -1,0 +1,34 @@
+package com.computer;
+
+public class Laptop extends Computer implements Graphic{
+
+	public Laptop() {
+		
+	}
+
+
+	public Laptop(String name, int cpu, int memory, int battery) {
+		super(name, cpu, memory, battery);
+	}
+
+
+
+	//당연히 추상 method를 overridng해야
+	//우리 class가 추상 class가 되지 않음
+	@Override
+	public void operate(int time) {
+		
+	}
+
+
+	@Override
+	public double rendering(int size) {
+		
+		return 0;
+	}
+	
+	
+//	abstract double rendering(int size);
+	
+	
+}//

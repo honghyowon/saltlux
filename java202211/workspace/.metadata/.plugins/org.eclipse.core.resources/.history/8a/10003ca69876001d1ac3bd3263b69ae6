@@ -1,0 +1,25 @@
+package sampleproj;
+
+
+
+class ThreadEx_06_1 extends Thread {
+	
+	@Override
+	public void run() {
+		
+		int i = 10;		// 지역변수
+		
+		while(i != 0) {
+			System.out.println(i);
+		}
+		
+	}
+}
+
+public class ThreadEx_06 {
+
+	public static void main(String[] args) {
+		
+	}
+	
+}//

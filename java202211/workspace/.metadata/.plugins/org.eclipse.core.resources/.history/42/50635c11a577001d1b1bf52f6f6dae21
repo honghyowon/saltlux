@@ -1,0 +1,47 @@
+package sampleproj;
+
+// 1. 공유객체를 생성하기 위한 class
+class Shared {
+	
+	// 공유객체의 공유 메소드
+	public synchronized void printName() { // 2.		// 11.동기화
+		try {				  // 3.
+			for(int i=0; i<10; i++) {
+				Thread.sleep(1000);
+				System.out.println(Thread.currentThread().getName());
+			}
+		} catch (Exception e) {
+		}
+	}
+}
+
+
+class ThreadEx_13_1 implements Runnable{// 4.
+	
+	public ThreadEx_13_1(Shared shared) {// 6.
+		super();
+		this.shared = shared;
+	}
+	
+	private Shared shared;				// 5.
+
+	@Override							// 7. 본인이 가진 공유객체의 공유 method를 가져옴. printName
+	public void run() {
+		shared.printName();
+		
+	}
+}
+public class ThreadEx_13 {
+	
+	public static void main(String[] args) {
+		// 8. 공유객체 만들기
+		Shared shared = new Shared();											// 9.공유객체를 가지고
+		
+		Thread t1 = new Thread(new ThreadEx_13_1(shared),"첫번째 쓰레드");			// 10.runnable객체를 만들고 -> thread 만들고 -> run 호출 -> 공유객체에 대해서 printName
+		Thread t2 = new Thread(new ThreadEx_13_1(shared),"두번째 쓰레드");
+		
+		t1.start();
+		t2.start();
+	}
+	
+}

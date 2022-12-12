@@ -1,0 +1,24 @@
+package sampleproj;
+
+
+class ThreadEx_05_1 extends Thread {
+	@Override
+	public void run() {
+	}
+}
+
+class ThreadEx_05_2 extends Thread {
+	@Override
+	public void run() {
+	
+	}
+}
+
+
+public class ThreadEx_05 {
+
+	public static void main(String[] args) {
+		
+	}
+	
+}//

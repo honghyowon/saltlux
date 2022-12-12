@@ -1,0 +1,55 @@
+package com.Test4;
+
+public class Rectangle extends Shape implements Movable{
+
+	public Rectangle() {
+	
+	}
+	
+	
+	
+	public Rectangle(int width) {
+		super();
+		this.width = width;
+	}
+
+
+
+	private int width;
+
+
+
+	public int getWidth() {
+		return width;
+	}
+
+
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+	
+	
+	
+	
+	@Override
+	public double getArea() {
+
+		return super.getArea();
+	}
+	
+	@Override
+	public double getCircumferenc() {
+
+		return super.getCircumferenc();
+	}
+	
+	
+	public void move(int x, int y) {
+
+	}
+	
+	
+	
+	
+}//

@@ -1,0 +1,19 @@
+package sampleproj;
+
+
+
+class ThreadEx_06_1 extends Thread {
+	
+	@Override
+	public void run() {
+	
+	}
+}
+
+public class ThreadEx_06 {
+
+	public static void main(String[] args) {
+		
+	}
+	
+}//

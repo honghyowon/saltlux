@@ -1,0 +1,32 @@
+package sampleproj;
+
+
+class ThreadEx_03_1 extends Thread{
+	
+	public Thread_03_1() {
+
+
+	}
+	
+	public Thread_03_1(String name) {
+		super(name);
+
+	}
+	
+		
+	
+	@Override
+	public void run() {
+	
+	}
+}//
+
+
+public class ThreadEx_03 {
+
+	public static void main(String[] args) {
+		
+	}
+	
+}//
+

@@ -1,0 +1,20 @@
+package sampleproj;
+
+class ThreadEx_07_1 implements Runnable {
+
+	@Override
+	public void run() {
+		
+		while(true) {
+			System.out.println(Thread.currentThread().getName());	// 현재Thread를 찾는다		
+		}
+		
+	}
+	
+}
+
+public class ThreadEx_07 {
+	public static void main(String[] args) {
+		
+	}
+}

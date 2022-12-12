@@ -1,0 +1,32 @@
+package sampleproj;
+
+//쉽게 Thread하기 위해 Thread class를 상속받음
+class ThreadEx_02_1 extends Thread{
+	public ThreadEx_02_1() {
+		
+	}
+	
+	public ThreadEx_02_1(String name) {
+		super();
+		// Thread class의 생성자 중 문자열 하나를 받아들이는 생성자를 사용
+		// 해당문자열로 Thread의 이름 설정
+	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		for(int i=0; i<5; i++) {
+			System.out.println(this.getName());
+		}//for()
+	}	
+}
+
+public class ThreadEx_02 {
+
+	public static void main(String[] args) {
+		
+	}
+	
+	
+	
+}//

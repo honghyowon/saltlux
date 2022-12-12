@@ -1,0 +1,12 @@
+package com.test5;
+
+import java.util.HashMap;
+
+public class Company {
+	
+	public static void main(String[] args) {
+		HashMap<Integer, Employee> map = new HashMap<Integer, Employee>();
+		
+	}
+	
+}//

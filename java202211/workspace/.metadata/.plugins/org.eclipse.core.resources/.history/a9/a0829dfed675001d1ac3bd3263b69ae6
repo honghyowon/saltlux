@@ -1,0 +1,21 @@
+package sampleproj;
+
+class ThreadEx_01_1 extends Thread {
+	
+	//새로운 독립적인 실행 흐름
+	//프로그램의 entry point에 준하는 무언가 시작 method가 있다는 의미
+	@Override
+	public void run() {
+		//내가 실행하고 싶은 코드를 작성 !
+		
+	}	//프로그램의 entry point
+}
+
+public class ThreadEx_01 {
+	
+	public static void main(String[] args) {
+		//이 main method는 당연히 하나의 Thread에 의해서 실행되는 method
+		
+	}
+	
+}

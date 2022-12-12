@@ -1,0 +1,24 @@
+package com.tests;
+
+public class Secretary extends Employee implements Bonus{
+
+	
+	public Secretary() {
+	
+	}
+	
+	
+	
+	
+	@Override
+	public void incentive(int pay) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+
+	
+	
+}//
