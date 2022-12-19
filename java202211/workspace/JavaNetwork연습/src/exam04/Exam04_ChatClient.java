@@ -1,4 +1,4 @@
-package exam03;
+package exam04;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,7 +19,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
-public class Exam03_MultiEchoClient extends Application{
+public class Exam04_ChatClient extends Application{
 	
 	TextArea textArea;
 	TextField ipTextField;
@@ -68,6 +68,20 @@ public class Exam03_MultiEchoClient extends Application{
 				// 연결 버튼 누르면 하는 동작
 				pr = new PrintWriter(socket.getOutputStream());	// 소켓을 통해 클라이언트쪽에서 내보냄
 				br = new BufferedReader(new InputStreamReader(socket.getInputStream()));	// 데이터를 받아들이는 통로
+	
+				(new Thread(()->{
+					while(true) {
+						try {
+							String receive = br.readLine();	// 서버가 보내준 걸 화면에 찍는다
+							printMsg(receive);
+						} catch (IOException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+					}//while()
+					
+				})).start();
+				
 				
 			} catch (UnknownHostException e1) {
 				// TODO Auto-generated catch block
@@ -103,13 +117,6 @@ public class Exam03_MultiEchoClient extends Application{
 			pr.println(id + " > " + msg);	// 마차
 			pr.flush();
 			
-			try {
-				String receive = br.readLine();	// 서버가 보내준 걸 화면에 찍는다
-				printMsg(receive);
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
 		});
 	
 		bottomFlowPane.getChildren().add(idTextField);
